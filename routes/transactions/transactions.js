@@ -5,6 +5,7 @@ const transactions = require('../../controllers/transactionsController')
 
 
 router.get('/transactions', transactions.getAll)
+// router.get('/transactions/:id', transactions.getById)
 
 
 

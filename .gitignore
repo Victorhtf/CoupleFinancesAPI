@@ -1,0 +1,30 @@
+# Arquivos e diretórios específicos do Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Arquivos de configuração
+.env
+
+# Arquivos de compilação e pacotes
+dist/
+build/
+out/
+*.zip
+*.tar.gz
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.temp
+
+# Arquivos de texto criados por editores
+*.txt~
+*.swp
+
+# Cache de dependências e pacotes
+/.pnp/
+.pnp.js
+
+# Arquivos de backup do Visual Studio Code
+/.vscode/*.bak
