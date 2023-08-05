@@ -1,7 +1,6 @@
 const { Client } = require('pg');
 require('dotenv').config();
 
-// Classe que implementa o padrão Singleton
 class Database {
     constructor() {
         this.client = new Client({
@@ -12,21 +11,18 @@ class Database {
             port: process.env.DB_PORT
         });
 
-        this.connected = false; // Variável para verificar se a conexão já foi estabelecida
+        this.connected = false;
     }
 
-    // Método para conectar ao banco de dados
     async connect() {
         try {
-            // Verifica se a conexão já foi estabelecida
             if (!this.connected) {
                 console.log('Trying to establish connection');
-                // Estabelece a conexão com o banco de dados
                 await this.client.connect();
-                this.connected = true; // Marca a conexão como estabelecida
+                this.connected = true;
                 console.log('Connection successful');
             }
-            return this.client; // Retorna o cliente de banco de dados
+            return this.client;
         } catch (error) {
             console.log('Connection error');
             throw error;
@@ -34,8 +30,6 @@ class Database {
     }
 }
 
-// Criando uma única instância da classe Database (Singleton)
 const database = new Database();
 
-// Exportando a instância única para ser reutilizada em outros módulos
 module.exports = database;
