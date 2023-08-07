@@ -3,7 +3,6 @@ const router = express.Router();
 
 const users = require('./users/users')
 const transactions = require('./transactions/transactions')
-// const api = require('./api/api')
 
 
 // router.use(api);
