@@ -25,8 +25,15 @@ class Transactions {
             console.error(error)
             
         }
+    }
+    
+    static async createTransaction (transaction) {
 
-}
+        const { data, type, description, value, category, source, status, notes, username } = transaction
+        const client = await database.connect();
+        const createdTransaction = await client.query('INSERTO INTO transactions (data, type, description, value, category, source, status, notes, username) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', [data, type, description, value, category, source, status, notes, username]);
+        return createdTransaction;
+    }
 }
 
 module.exports = Transactions;
