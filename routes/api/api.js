@@ -1,10 +1,12 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// const root = require('../../controllers/rootController');
-// const apiDetails = require('../../controllers/apidetailsController')
+const API = require('../../controllers/apiController');
 
-// router.get('/', root.get);
-// router.get('/api', apiDetails.get);
 
-// module.exports = router;
+// Routes
+router.get('/api', API.getDetails);
+router.get('/', API.root);
+
+
+module.exports = router;

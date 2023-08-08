@@ -1,4 +1,7 @@
 class API {
+    static async root (req, res) {
+        res.send('CoupleFinanceAPI');
+    }
 
     static async getDetails (req, res,) {
         return res.status(200).json(

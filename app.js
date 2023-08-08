@@ -2,17 +2,16 @@
 const express = require('express');
 const app = express();
 const router = require('./routes/router');
-
-require('dotenv').config();
 const PORT = process.env.SERVER_PORT;
+require('dotenv').config();
+
 
 // Parser JSON
-app.use(express.json())
+app.use(express.json());
+
 
 // Default routes
 app.use(router);
-
-
 
 
 // Run server
