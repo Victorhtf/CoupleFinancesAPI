@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_CONNECT_URL")
+}
+
+model Transactions {
+  id          Int      @id @default(autoincrement())
+  date        DateTime @db.Date
+  type        String   @db.VarChar(20)
+  description String   @db.VarChar(256)
+  value       Decimal  @db.Decimal(10, 2)
+  category    String  @db.VarChar(100)
+  source      String  @db.VarChar(100)
+  status      String   @db.VarChar(20)
+  notes       String?  @db.VarChar(256)
+  userId Int 
+  user Users @relation(fields: [userId], references: [id])
+  
+}
+
+model Users {
+  id        Int       @id @default(autoincrement())
+  username  String   @db.VarChar(30)
+  email     String   @db.VarChar(256)
+  name      String   @db.VarChar(30)
+  surname   String   @db.VarChar(30)
+  birthdate DateTime @db.Date
+  partner   String   @db.VarChar(50)
+  transactions Transactions[]
+  goals Goals[]
+}
+
+model Goals {
+  id Int @id @default(autoincrement()) 
+  targetDescription String
+  targetValue String
+  userId Int
+  user Users @relation(fields: [userId], references: [id])
+}

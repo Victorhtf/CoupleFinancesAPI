@@ -3,6 +3,9 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
+# Aquivos de banco de dados
+prisma/migrations
+
 # Arquivos de configuração
 .env
 

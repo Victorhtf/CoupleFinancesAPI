@@ -7,22 +7,14 @@
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
         "node_modules": true,
-        "package.json": true,
-        "package-lock.json": true,
         ".env.example": true,
-        ".env": true,
         ".eslintrc.json": true,
-        ".gitignore": true,
         ".vscode": true
     },
     "hide-files.files": [
         "node_modules",
-        "package.json",
-        "package-lock.json",
         ".env.example",
-        ".env",
         ".eslintrc.json",
-        ".gitignore",
         ".vscode"
     ]
 }
